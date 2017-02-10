@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="server.User">
+		<id name="email" column="email_ID"></id>
+		<property name="nombre"></property>
+		<property name="apellidos"></property>
+		<property name="foto" not-null="true">
+			<column name="foto" sql-type="MEDIUMBLOB" />
+		</property>
+		<property name="web"></property>
+		<property name="publico" type="boolean"></property>
+		<property name="lastIP"></property>
+		<property name="novedad" type="boolean"></property>
+		<property name="solicitud" type="boolean"></property>
+	</class>
+</hibernate-mapping>

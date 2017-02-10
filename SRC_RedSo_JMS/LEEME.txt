@@ -1,0 +1,43 @@
+** Práctica 2 - Java JMS
+** Víctor Portals Lorenzo - R090218
+
+Intrucciones de ejecución:
+
+Servidor JMS:
+
+Para ejecutar la práctica es necesario instalar en el servidor Apache ActiveMQ. El sistema de mensajes
+JMS funciona con la configuracióon por defecto del servidor. Descargue la última versión estable de:
+
+http://www.apache.org/dyn/closer.cgi?path=/activemq/5.10.0/apache-activemq-5.10.0-bin.tar.gz
+
+y seguí las instrucciones de instalación de:
+
+http://activemq.apache.org/getting-started.html#GettingStarted-UnixBinaryInstallation
+
+y de arranque de:
+
+http://activemq.apache.org/getting-started.html#GettingStarted-StartingActiveMQ
+
+Sin ninguna configuración adicional y con el servidor de la red social en la misma máquina que ActiveMQ.
+
+Los Topics se crean dinámicamente, crea un topic con el nombre del usuario cuando este se registra. 
+El cliente se conecta al servidor ActiveMQ especificado en redso_client.conf, tal como se explica en el apartado
+siguiente. El servidor se conecta al servidor ActiveMQ local.
+
+Java RMI: 
+
+El código fuente incluye dos paquetes, server y client, todas las librerías empleadas se encuentran en
+Librerias_RedSo.
+
+Tanto el cliente como el servidor abren el registro RMI desde el código, por tanto no es necesario abrirlo 
+independientemente. Cada ejecutable tiene asociado un archivo de configuración, redso_client.conf y 
+redso_server.conf, el primer indica al cliente la dirección del servidor al que conectar, y el segundo indica
+al servidor su propia dirección, que utiliza para establecer el parámetro de la JVM java.rmi.server.hostname.
+
+Los métodos main están contenidos en MainClient.java y MainServer.java.
+
+La configuración de la base de datos se establece en el fichero hibernate.cfg.xml que se encuentra en la 
+carpeta src del proyecto. Solamente hhay que crear la base de datos de nombre 'redso' y en para la primera
+ejecución descomentar la línea <!--<property name="hbm2ddl.auto">create</property>-->. Entonces se crearán las
+tablas User, Messages, Identifier, Friends, y en caso de estar ya creadas, se borrará su contenido.
+

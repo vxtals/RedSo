@@ -1,0 +1,20 @@
+** Práctica 1 - Java RMI
+** Víctor Portals Lorenzo - R090218
+
+Intrucciones de ejecución:
+
+El código fuente incluye dos paquetes, server y newclient, todas las librerías empleadas se encuentran en
+Librerias_RedSo.
+
+Tanto el cliente como el servidor abren el registro RMI desde el código, por tanto no es necesario abrirlo 
+independientemente. Cada ejecutable tiene asociado un archivo de configuración, redso_client.conf y 
+redso_server.conf, el primer indica al cliente la dirección del servidor al que conectar, y el segundo indica
+al servidor su propia dirección, que utiliza para establecer el parámetro de la JVM java.rmi.server.hostname.
+
+Los métodos main están contenidos en MainClient.java y MainServer.java.
+
+La configuración de la base de datos se establece en el fichero hibernate.cfg.xml que se encuentra en la 
+carpeta src del proyecto. Solamente hhay que crear la base de datos de nombre 'redso' y en para la primera
+ejecución descomentar la línea <!--<property name="hbm2ddl.auto">create</property>-->. Entonces se crearán las
+tablas User, Messages, Identifier, Friends, y en caso de estar ya creadas, se borrará su contenido.
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="server.Friend">
+		<id name="id" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="email_1"></property>
+		<property name="email_2"></property>
+		<property name="acepta_1" type="boolean"></property>
+		<property name="acepta_2" type="boolean"></property>
+	</class>
+</hibernate-mapping>
